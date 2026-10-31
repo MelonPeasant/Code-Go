@@ -1,0 +1,26 @@
+# 编译出来的二进制程序
+*.exe
+*.out
+*.test
+*.prof
+
+# Go 环境缓存
+vendor/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志、临时文件
+*.log
+tmp/
+temp/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境变量、密钥文件
+.env
+*.key
+id_rsa*
