@@ -33,7 +33,7 @@ func getLastIP() (string, error) {
 	var tStr, ip string
 	_, err = fmt.Sscanf(lastLine, "%s %s | %s", &tStr, &tStr, &ip)
 	if err != nil {
-		return "", nil
+		return "Wrong Format of LastLine", nil
 	}
 	return ip, nil
 }
