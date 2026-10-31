@@ -14,19 +14,19 @@ func getLastIP() (string, error) {
 	file, err := os.Open(logFile)
 	if err != nil {
 		if os.IsNotExist(err) {
-			return "", nil // 文件不存在，说明没有历史记录
+			return "File Not Exist", nil // 文件不存在，说明没有历史记录
 		}
-		return "", err
+		return "Open File Wrong", err
 	}
 	defer file.Close()
 
 	content, err := io.ReadAll(file)
 	if err != nil {
-		return "", err
+		return "Read File Wrong", err
 	}
 	lines := splitLines(string(content))
 	if len(lines) == 0 {
-		return "", nil
+		return "File is Empty", nil
 	}
 	lastLine := lines[len(lines)-1]
 	// 格式示例：2026-10-30 14:30:00 | 123.45.67.89
